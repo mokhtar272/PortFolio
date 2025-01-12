@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Resume - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet">
+
+    <style>
+      :root {
+          --primary-color: #3b82f6;
+          --primary-light: #93c5fd;
+      }
+      
+      .projects-section {
+          background-color: #f8fafc;
+          padding: 4rem 0;
+      }
+      
+      .section-header {
+          text-align: center;
+          margin-bottom: 3rem;
+      }
+      
+      .section-title {
+          font-size: 2rem;
+          color: #1f2937;
+          margin-bottom: 1rem;
+      }
+      
+      .section-divider {
+          width: 6rem;
+          height: 0.25rem;
+          background-color: var(--primary-color);
+          margin: 0 auto;
+          border-radius: 9999px;
+      }
+      
+      .project-card {
+          background: white;
+          border-radius: 0.75rem;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          border: none;
+          height: 100%;
+          position: relative;
+      }
+      
+      .project-card:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+      
+      .project-card::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.1));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+      }
+      
+      .project-card:hover::after {
+          opacity: 1;
+      }
+      
+      .card-body {
+          padding: 1.5rem;
+          position: relative;
+          z-index: 1;
+      }
+      
+      .project-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #1f2937;
+          margin-bottom: 1rem;
+      }
+      
+      .project-description {
+          color: #4b5563;
+          margin-bottom: 1.5rem;
+          line-height: 1.6;
+      }
+      
+      .tech-stack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+      }
+      
+      .tech-badge {
+          background-color: #dbeafe;
+          color: var(--primary-color);
+          padding: 0.25rem 0.75rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+      }
+      
+      .tech-badge:hover {
+          background-color: var(--primary-color);
+          color: white;
+      }
+      
+      .project-links {
+          display: flex;
+          gap: 1rem;
+      }
+      
+      .project-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: var(--primary-color);
+          text-decoration: none;
+          transition: all 0.3s ease;
+      }
+      
+      .project-link:hover {
+          color: #1d4ed8;
+      }
+      
+      .project-link i {
+          font-size: 1.25rem;
+      }
+      
+      /* Animation des cartes */
+      .fade-up {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease;
+      }
+      
+      .fade-up.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      .bg-primary-custom {
+        background: linear-gradient(to bottom, #3498db, #09161f); /* Dégradé de bleu vers gris */
+      }
+      .text-gradient-primary {
+  background: linear-gradient(to right, #5dade2, #3498db); /* Bleu clair vers bleu */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.education-card {
+      border-left: 4px solid #0d6efd;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .education-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .date-badge {
+      background: #0d6efd;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .subheading {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+
+    .project-badge {
+      background: #198754;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+
+
+
+   
+    .skills-section {
+      background: #f8f9fa;
+      padding: 4rem 0;
+    }
+
+    .skill-category {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0d6efd;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.3rem;
+      border-radius: 20px;
+      background: #e9ecef;
+      color: #495057;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .skill-tag:hover {
+      background: #0d6efd;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .category-title {
+      color: #0d6efd;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .interests-section {
+      padding: 4rem 0;
+      background: #f8f9fa;
+    }
+
+    .interest-card {
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+
+    .interest-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+      z-index: 1;
+    }
+
+    .card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .interest-card:hover .card-bg {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      z-index: 2;
+      color: white;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .interest-card:hover .card-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .name-title {
+    position: relative;
+    display: inline-block;
+  }
+
+  .name-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #0d6efd;
+    animation: lineGrow 1s ease forwards;
+    animation-delay: 0.8s;
+  }
+
+  /* Ajoutez ce CSS */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    background: transparent;
+}
+
+.tech-badge:hover {
+    transform: translateY(-5px);
+}
+
+/* Tooltip style */
+.tech-badge::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Couleurs spécifiques pour chaque technologie */
+.tech-badge .fa-html5 { color: #E34F26; }
+.tech-badge .fa-css3-alt { color: #1572B6; }
+.tech-badge .fa-js { color: #F7DF1E; }
+.tech-badge .fa-react { color: #61DAFB; }
+.tech-badge .fa-node-js { color: #339933; }
+.tech-badge .fa-database { color: #336791; }
+.tech-badge .fa-php { color: #777BB4; }
+.tech-badge .fa-java { color: #007396; }
+.tech-badge .devicon-tailwindcss-plain { color: #06B6D4; }
+.tech-badge .devicon-electron-original { color: #47848F; }
+/* .tech-badge .devicon-c-plain { color: #A8B9CC; } */
+.tech-badge .fa-project-diagram { color: #FF4088; }
+.tech-badge .fa-bootstrap { color: #563d7c; }
+.tech-badge .fa-fire { color: #dd4814; }
+.tech-badge .devicon-c-plain { color: #1977e3; } 
+
+
+.tailwind-icon {
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover .tailwind-icon {
+    filter: brightness(1.2);
+}
+
+  @keyframes lineGrow {
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+      </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/m.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">Projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Formations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Compétences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">Centres d'intérêt</a>
+          </li>
+        
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-5 name-title animate-fade-in">Mokhtar
+            <span class="text-gradient-primary">RIDA</span>
+          </h1>
+         
+          <p class="mb-5 animate-fade-in" style="animation-delay: 1s">étudiant en troisième année de Licence en Informatique Fondaments et Applications. Passionné par le génie logiciel et l'intelligence artificielle, je m'intéresse au développement de solutions innovantes et à l'exploration des technologies avancées.</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/mokhtar-rida-598776321/">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/mokhtar272">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="projects-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mes Projets</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="row gy-5 gx-4">
+                <!-- Projet 1 -->
+                <div class="col-12 col-md-6  mb-4">
+                    <div class="project-card fade-up">
+                        <div class="card-body">
+                            <h3 class="project-title">Logiciel pour Laboratoire Médical</h3>
+                            <p class="project-description">
+                                Développement d'un logiciel complet pour la gestion des laboratoires médicaux avec interface moderne et fonctionnalités avancées.
+                            </p>
+                            <div class="tech-stack">
+                              <span class="tech-badge" data-tooltip="UML">
+                                <i class="fas fa-project-diagram"></i>
+                            </span>
+                            
+                            <!-- HTML -->
+                            <span class="tech-badge" data-tooltip="HTML">
+                                <i class="fab fa-html5"></i>
+                            </span>
+                            
+                            <!-- CSS -->
+                            <span class="tech-badge" data-tooltip="CSS">
+                                <i class="fab fa-css3-alt"></i>
+                            </span>
+                            
+                            <!-- JavaScript -->
+                            <span class="tech-badge" data-tooltip="JavaScript">
+                                <i class="fab fa-js"></i>
+                            </span>
+                            
+                            <!-- Tailwind -->
+                            <span class="tech-badge" data-tooltip="Tailwind CSS">
+                              <svg viewBox="0 0 24 24" class="tailwind-icon" style="width: 1.5rem; height: 1.5rem;">
+                                  <path fill="#06B6D4" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
+                              </svg>
+                          </span>
+
+
+                            <span class="tech-badge" data-tooltip="React">
+                              <i class="fab fa-react"></i>
+                          </span>
+                          
+                          <!-- Node.js -->
+                          <span class="tech-badge" data-tooltip="Node.js">
+                              <i class="fab fa-node-js"></i>
+                          </span>
+                          
+                          <!-- Electron
+                          <span class="tech-badge" data-tooltip="Electron.js">
+                              <i class="devicon-electron-original"></i>
+                          </span> -->
+                          
+                          <!-- SQL -->
+                          <span class="tech-badge" data-tooltip="SQL">
+                              <i class="fas fa-database"></i>
+                          </span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code source</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Projet 2 -->
+                <div class="col-12 col-md-6  mb-4">
+                    <div class="project-card fade-up">
+                        <div class="card-body">
+                            <h3 class="project-title">Application de Recherche de Pays</h3>
+                            <p class="project-description">
+                                Application web interactive permettant de rechercher et d'explorer des informations détaillées sur les pays du monde entier.
+                            </p>
+                            <div class="tech-stack">
+                                 <!-- Tailwind -->
+                                 <span class="tech-badge" data-tooltip="Tailwind CSS">
+                                  <svg viewBox="0 0 24 24" class="tailwind-icon" style="width: 1.5rem; height: 1.5rem;">
+                                      <path fill="#06B6D4" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
+                                  </svg>
+                              </span>
+
+
+                          <span class="tech-badge" data-tooltip="React">
+                            <i class="fab fa-react"></i>
+                        </span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code source</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+<div class="col-12 col-md-6  mb-4">
+  <div class="project-card fade-up">
+      <div class="card-body">
+          <h3 class="project-title">Application Web de Gestion de Concours</h3>
+          <p class="project-description">
+              Système complet de gestion en ligne des concours pour les étudiants avec interface intuitive.
+          </p>
+          <div class="tech-stack">
+              <span class="tech-badge" data-tooltip="UML">
+                <i class="fas fa-project-diagram"></i>
+            </span>
+            <span class="tech-badge" data-tooltip="Bootstrap">
+              <!-- Bootstrap -->
+              <i class="fab fa-bootstrap"></i>
+            </span>           
+          
+          
+          <span class="tech-badge" data-tooltip="PHP">
+            <i class="fab fa-php"></i>
+          </span>
+              <span class="tech-badge" data-tooltip="CodeIgniter">              <i class="fas fa-fire"></i>
+              </span>
+              <span class="tech-badge" data-tooltip="SQL">
+                <i class="fas fa-database"></i>
+            </span>
+
+          </div>
+          <div class="project-links">
+              <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Demo</span>
+              </a>
+              <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                  <span>Code source</span>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Projet 4 -->
+<div class="col-12 col-md-6  mb-4">
+  <div class="project-card fade-up">
+      <div class="card-body">
+          <h3 class="project-title">Programme de Prédiction avec C</h3>
+          <p class="project-description">
+              Programme sophistiqué en C pour analyser les données d'entrée et effectuer des prédictions précises.
+          </p>
+          <div class="tech-stack">
+              <span class="tech-badge" data-tooltip="C"><i class="devicon-c-plain" style="color: #3680d6;"></i>
+              </span>
+            </div>
+          <div class="project-links">
+              <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Demo</span>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Projet 5 -->
+<div class="col-12 col-md-6  mb-4">
+  <div class="project-card fade-up">
+      <div class="card-body">
+          <h3 class="project-title">Application de Réservation de Films</h3>
+          <p class="project-description">
+              Application permettant aux utilisateurs de réserver facilement des billets de cinéma en ligne.
+          </p>
+          <div class="tech-stack">
+              <span class="tech-badge" data-tooltip="JAVA">        <i class="devicon-java-plain" style="color: #007396;"></i>
+
+              </span>
+          </div>
+          <div class="project-links">
+              <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Demo</span>
+              </a>
+              <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                  <span>Code source</span>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Projet 6 -->
+<div class="col-12 col-md-6  mb-4">
+  <div class="project-card fade-up">
+      <div class="card-body">
+          <h3 class="project-title">Application de Gestion des Mémoires et Articles</h3>
+          <p class="project-description">
+              Plateforme complète pour la gestion et l'organisation des mémoires et articles de recherche.
+          </p>
+          <div class="tech-stack">
+            <div class="tech-stack">
+              <span class="tech-badge" data-tooltip="UML">
+                <i class="fas fa-project-diagram"></i>
+            </span>
+            
+            <!-- HTML -->
+            <span class="tech-badge" data-tooltip="HTML">
+                <i class="fab fa-html5"></i>
+            </span>
+            
+            <!-- CSS -->
+            <span class="tech-badge" data-tooltip="CSS">
+                <i class="fab fa-css3-alt"></i>
+            </span>
+            
+            <!-- JavaScript -->
+            <span class="tech-badge" data-tooltip="JavaScript">
+                <i class="fab fa-js"></i>
+            </span>
+            
+            <!-- Tailwind -->
+            <span class="tech-badge" data-tooltip="Tailwind CSS">
+              <svg viewBox="0 0 24 24" class="tailwind-icon" style="width: 1.5rem; height: 1.5rem;">
+                  <path fill="#06B6D4" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
+              </svg>
+          </span>
+
+
+            <span class="tech-badge" data-tooltip="React">
+              <i class="fab fa-react"></i>
+          </span>
+          
+          <!-- Node.js -->
+          <span class="tech-badge" data-tooltip="Node.js">
+              <i class="fab fa-node-js"></i>
+          </span>
+          
+          <!-- Electron
+          <span class="tech-badge" data-tooltip="Electron.js">
+              <i class="devicon-electron-original"></i>
+          </span> -->
+          
+          <!-- SQL -->
+          <span class="tech-badge" data-tooltip="SQL">
+              <i class="fas fa-database"></i>
+          </span>
+
+          </div>
+          <div class="project-links">
+              <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Demo</span>
+              </a>
+              <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                  <span>Code source</span>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+    
+            </div>
+        </div>
+    
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation au scroll
+            const cards = document.querySelectorAll('.fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+    
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+        </script>
+    </section>
+
+
+
+    <section class="resume-section py-5" id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Formations</h2>
+          <div class="section-divider"></div>
+      </div>        
+        <div class="education-card animate__animated animate__fadeInLeft">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="fw-bold mb-2">Université de Bretagne Occidentale - UBO</h3>
+              <div class="subheading">3ème année licence informatique</div>
+             
+              <div class="mt-3">
+                <span class="date-badge">2024 - 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="education-card animate__animated animate__fadeInLeft animate__delay-1s">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="fw-bold mb-2">Université Mohamed Seddik BenYahia - Jijel</h3>
+              <div class="subheading">Licence en systèmes informatiques</div>
+              <div class="mt-3">
+                <span class="date-badge">2021 - 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="education-card animate__animated animate__fadeInLeft animate__delay-2s">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="fw-bold mb-2">Lycée El-kendy - Jijel</h3>
+              <div class="subheading">Sciences expérimentales</div>
+              <div class="mt-3">
+                <span class="date-badge">2018 - 2021</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Compétences</h2>
+          <div class="section-divider"></div>
+      </div>        
+        <div class="row">
+          <div class="col-md-6 animate__animated animate__fadeInUp">
+            <div class="skill-category">
+              <i class="fas fa-code category-icon"></i>
+              <h4 class="category-title">Technologies Web</h4>
+              <div>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">React</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <div class="skill-category">
+              <i class="fas fa-sitemap category-icon"></i>
+              <h4 class="category-title">Méthodes d'Analyse</h4>
+              <div>
+                <span class="skill-tag">UML</span>
+                <span class="skill-tag">SCRUM</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+            <div class="skill-category">
+              <i class="fas fa-laptop category-icon"></i>
+              <h4 class="category-title">Systèmes d'Exploitation</h4>
+              <div>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Windows</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+            <div class="skill-category">
+              <i class="fas fa-layer-group category-icon"></i>
+              <h4 class="category-title">Frameworks</h4>
+              <div>
+                <span class="skill-tag">CodeIgniter</span>
+                <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">Tailwind</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+            <div class="skill-category">
+              <i class="fas fa-tools category-icon"></i>
+              <h4 class="category-title">Outils & Technologies</h4>
+              <div>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">GitLab</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+            <div class="skill-category">
+              <i class="fas fa-terminal category-icon"></i>
+              <h4 class="category-title">Langages de Programmation</h4>
+              <div>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 mx-auto animate__animated animate__fadeInUp" style="animation-delay: 0.7s">
+            <div class="skill-category">
+                <i class="fas fa-database category-icon"></i>
+                <h4 class="category-title">Bases de Données</h4>
+                <div>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">phpMyAdmin</span>
+                    <span class="skill-tag">MariaDB</span>
+                </div>
+            </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+      
+
+    <section class="resume-section" id="interests">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Centres d'intérêt</h2>
+          <div class="section-divider"></div>
+      </div>         
+        <div class="row">
+          <div class="col-md-6 animate__animated animate__fadeInUp">
+            <div class="interest-card">
+              <div class="card-bg" style="background-image: url('/api/placeholder/600/400')"></div>
+              <div class="card-content">
+                <i class="fas fa-chess card-icon"></i>
+                <h3 class="card-title">Échecs</h3>
+                <p class="card-text">Passionné par les échecs, j'apprécie la stratégie et la réflexion qu'exige ce jeu. Je participe régulièrement à des tournois en ligne et continue d'améliorer mon niveau.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <div class="interest-card">
+              <div class="card-bg" style="background-image: url('/api/placeholder/600/400')"></div>
+              <div class="card-content">
+                <i class="fas fa-futbol card-icon"></i>
+                <h3 class="card-title">Football</h3>
+                <p class="card-text">Le football est plus qu'un sport pour moi. C'est une passion qui me permet de me dépenser physiquement tout en développant l'esprit d'équipe.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+            <div class="interest-card">
+              <div class="card-bg" style="background-image: url('/api/placeholder/600/400')"></div>
+              <div class="card-content">
+                <i class="fas fa-campground card-icon"></i>
+                <h3 class="card-title">Camping entre amis</h3>
+                <p class="card-text">J'adore partir camper avec mes amis. Ces moments de partage en pleine nature sont l'occasion de créer des souvenirs inoubliables et de se déconnecter du quotidien.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+            <div class="interest-card">
+              <div class="card-bg" style="background-image: url('/api/placeholder/600/400')"></div>
+              <div class="card-content">
+                <i class="fas fa-film card-icon"></i>
+                <h3 class="card-title">Séries & Films</h3>
+                <p class="card-text">Grand amateur de séries et de films, je suis particulièrement attiré par les genres sci-fi et fantastique. J'aime découvrir de nouvelles histoires et univers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+     
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+  </body>
+
+</html>
