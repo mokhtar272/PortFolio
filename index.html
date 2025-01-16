@@ -441,6 +441,158 @@
     }
   }
 
+  /* Variables globales avec !important pour forcer l'application */
+:root {
+    --dark-bg: #111827 !important;
+    --darker-bg: #0f172a !important;
+    --card-bg: #1f2937 !important;
+    --text-primary: #c0c0c4 !important;
+    --text-secondary: #d1d5db !important;
+    --accent-color: #3b82f6 !important;
+    --accent-light: #5c789b !important;
+    --border-color: #374151 !important;
+}
+
+/* Base styles avec spécificité augmentée */
+body, html {
+    background-color: var(--dark-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Navbar avec spécificité augmentée */
+nav.navbar.bg-primary-custom {
+    background: linear-gradient(45deg, #000000, #111827, #1f2937) !important;
+}
+
+/* Projects section avec sélecteurs plus spécifiques */
+section.projects-section {
+    background-color: var(--darker-bg) !important;
+}
+
+.projects-section .project-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.projects-section .project-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.projects-section .project-title {
+    color: var(--text-primary) !important;
+}
+
+.projects-section .project-description {
+    color: var(--text-secondary) !important;
+}
+
+/* Education section avec sélecteurs plus spécifiques */
+section#education {
+    background-color: var(--darker-bg) !important;
+}
+
+#education .education-card {
+    background: var(--card-bg) !important;
+    border-left: 4px solid var(--accent-color) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+#education .education-card:hover {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+#education .section-title,
+#education h3.fw-bold {
+    color: var(--text-primary) !important;
+}
+
+#education .subheading {
+    color: var(--text-secondary) !important;
+}
+
+/* Skills section avec sélecteurs plus spécifiques */
+section.skills-section {
+    background: var(--darker-bg) !important;
+}
+
+.skills-section .skill-category {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.skills-section .category-title {
+    color: var(--accent-light) !important;
+}
+
+.skills-section .skill-tag {
+    background: var(--darker-bg) !important;
+    color: var(--text-secondary) !important;
+}
+
+.skills-section .skill-tag:hover {
+    background: var(--accent-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Interests section avec sélecteurs plus spécifiques */
+section#interests {
+    background-color: var(--darker-bg) !important;
+}
+
+#interests .interest-card {
+    background: var(--card-bg) !important;
+}
+
+#interests .card-front {
+    background: linear-gradient(45deg, #1a237e, #0d47a1, #1565c0) !important;
+}
+
+#interests .card-back {
+    background: var(--card-bg) !important;
+}
+
+#interests .card-content {
+    color: var(--text-primary) !important;
+}
+
+#interests .list-unstyled i {
+    color: var(--accent-color) !important;
+}
+
+/* Headers et textes avec sélecteurs plus spécifiques */
+.section-header .section-title,
+.section-title,
+h1.mb-5,
+h2.mb-5,
+h3.mb-5 {
+    color: var(--text-primary) !important;
+}
+
+/* Links avec sélecteurs plus spécifiques */
+.project-link,
+.nav-link {
+    color: var(--accent-light) !important;
+}
+
+.project-link:hover,
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Section dividers avec sélecteurs plus spécifiques */
+.section-header .section-divider {
+    background-color: var(--accent-color) !important;
+}
+
+/* About section avec sélecteurs plus spécifiques */
+section#about {
+    background-color: var(--dark-bg) !important;
+}
+
+#about p {
+    color: var(--text-secondary) !important;
+}
+
       </style>
 
   </head>
@@ -588,7 +740,7 @@
                         <div class="card-body">
                             <h3 class="project-title">Application de Recherche de Pays</h3>
                             <p class="project-description">
-                                Application web interactive permettant de rechercher et d'explorer des informations détaillées sur les pays du monde entier.
+                                Application web permettant de rechercher et d'explorer des informations détaillées sur les pays du monde entier.
                             </p>
                             <div class="tech-stack">
                                  <!-- Tailwind -->
@@ -622,8 +774,7 @@
       <div class="card-body">
           <h3 class="project-title">Application Web de Gestion de Concours</h3>
           <p class="project-description">
-              Système complet de gestion en ligne des concours pour les étudiants avec interface intuitive.
-          </p>
+            Système complet de gestion en ligne pour les concours de mathématiques          </p>
           <div class="tech-stack">
               <span class="tech-badge" data-tooltip="UML">
                 <i class="fas fa-project-diagram"></i>
@@ -645,7 +796,7 @@
 
           </div>
           <div class="project-links">
-            <a href="https://www.linkedin.com/feed/update/VOTRE-ID-LINKEDIN-ICI" class="project-link">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7279205738462289920/" class="project-link">
                 <i class="fab fa-linkedin"></i>
                 <span>Voir la démo vidéo</span>
             </a>
@@ -664,7 +815,7 @@
       <div class="card-body">
           <h3 class="project-title">Programme de Prédiction avec C</h3>
           <p class="project-description">
-              Programme sophistiqué en C pour analyser les données d'entrée et effectuer des prédictions précises.
+              Programme en C pour analyser les données d'entrée et effectuer des prédictions précises.
           </p>
           <div class="tech-stack">
               <span class="tech-badge" data-tooltip="C"><i class="devicon-c-plain" style="color: #3680d6;"></i>
@@ -686,9 +837,7 @@
       <div class="card-body">
           <h3 class="project-title">Application de Réservation de Films</h3>
           <p class="project-description">
-              Application permettant aux utilisateurs de réserver facilement des billets de cinéma en ligne.
-          </p>
-          <div class="tech-stack">
+            C'est une application pour gérer les films, avec des fonctionnalités pour utilisateurs et administrateurs.          <div class="tech-stack">
               <span class="tech-badge" data-tooltip="JAVA">        <i class="devicon-java-plain" style="color: #007396;"></i>
 
               </span>
@@ -1037,11 +1186,11 @@
                   <div class="card-content">
                     <h4>Mon parcours aux échecs</h4>
                     <ul class="list-unstyled">
-                      <li><i class="fas fa-trophy"></i> Classement ELO: 1800+</li>
-                      <li><i class="fas fa-medal"></i> Tournois réguliers</li>
-                      <li><i class="fas fa-book"></i> Étude stratégique</li>
+                      <li><i class="fas fa-trophy"></i> Classement ELO: 1400+</li>
+                      <!-- <li><i class="fas fa-medal"></i> Tournois en ligne</li> -->
+                      <li><i class="fas fa-book"></i> Compte chess.com : mokhtarrida</li>
                     </ul>
-                    <button class="btn btn-primary btn-sm mt-3 flip-btn">Retour</button>
+                    <!-- <button class="btn btn-primary btn-sm mt-3 flip-btn">Retour</button> -->
                   </div>
                 </div>
               </div>
@@ -1065,10 +1214,10 @@
                     <h4>Optimisation & Algorithmes</h4>
                     <ul class="list-unstyled">
                       <li><i class="fas fa-code-branch"></i> Codeforces Solver</li>
-                      <li><i class="fas fa-calculator"></i> Programmation Linéaire (OPL)</li>
-                      <li><i class="fas fa-project-diagram"></i> Optimisation Avancée</li>
+                      <!-- <li><i class="fas fa-calculator"></i> Programmation Linéaire (OPL)</li> -->
+                      <!-- <li><i class="fas fa-project-diagram"></i> Optimisation </li> -->
                     </ul>
-                    <button class="btn btn-primary btn-sm mt-3 flip-btn">Retour</button>
+                    <!-- <button class="btn btn-primary btn-sm mt-3 flip-btn">Retour</button> -->
                   </div>
                 </div>
               </div>
@@ -1084,7 +1233,7 @@
                   <div class="card-content">
                     <i class="fas fa-robot fa-3x card-icon pulse"></i>
                     <h3 class="card-title mt-3">Intelligence Artificielle</h3>
-                    <button class="btn btn-outline-light btn-sm mt-3 flip-btn">En savoir plus</button>
+                    <!-- <button class="btn btn-outline-light btn-sm mt-3 flip-btn">En savoir plus</button> -->
                   </div>
                 </div>
                 <div class="card-back">
@@ -1095,7 +1244,7 @@
                       <li><i class="fas fa-lightbulb"></i> Veille technologique IA</li>
                       <li><i class="fas fa-rocket"></i> Nouveaux modèles avancés</li>
                     </ul>
-                    <button class="btn btn-primary btn-sm mt-3 flip-btn">Retour</button>
+                    <!-- <button class="btn btn-primary btn-sm mt-3 flip-btn">Retour</button> -->
                   </div>
                 </div>
               </div>
